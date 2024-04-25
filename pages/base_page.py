@@ -1,4 +1,5 @@
 # pages/base_page.py
+from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium import webdriver
 from selenium.webdriver.firefox.service import Service
@@ -16,6 +17,7 @@ class BasePage:
         except:
             print("ERROR : URL is incorrect/Network Error")
             return False
+
     def enter_text(self, element_id, text):
         self.driver.find_element(By.XPATH, element_id).send_keys(text)
 
